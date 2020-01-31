@@ -1,3 +1,189 @@
-.root {
+@import './normalize.css';
 
+$screen-md-min: 768px;
+$screen-sm-min: 425px;
+$grey-color : #616161;
+
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.container{
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+body {
+  font-family: sans-serif;
+  nav {
+    position: absolute;
+    top: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+    width: 100%;
+    ul {
+      display: -webkit-box;
+      display: flex;
+      li{
+        a {
+          line-height: 1rem;
+          padding: 1rem;
+          color: #f0efef;
+        }
+      }
+    }
+  }
+  .root {
+    .hero {
+      color: #f0efef;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -webkit-box-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+              align-items: center;
+      height: 100vh;
+      //background-color: #192965;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2),rgba(7, 10, 53, 0.58)),url('/gray-bridge-and-trees-814499.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      h1 {
+        font-size: 3rem;
+        @include md {
+          font-size: 2rem;
+        }
+        span {
+          color: #e84545;
+        }
+      }
+      h4 {
+        margin-top: 0;
+        font-size: 2rem;
+        font-weight: 300;
+        @include md {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    hr {
+      width: 80%;
+      color: $grey-color
+    }
+    .meet-section {
+      padding: 3.4rem;
+      .container {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+                justify-content: center;
+        .description {
+          text-align: center;
+          width: 40%;
+          color: $grey-color;
+          @include md {
+            width: 75%;
+          }
+          h2{
+            font-size: 2rem;
+            font-weight: 300;
+          }
+          p{
+            font-size: 1.28rem;
+            span {
+              margin-top: 1rem;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .skills{
+      padding: 3.4rem;
+      color: $grey-color;
+      h2{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+      }
+      .wrapper{
+        display: -webkit-box;
+        display: flex;
+        justify-content: space-around;
+        -webkit-box-align: center;
+                align-items: center;
+        @include md {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+                  flex-direction: column;
+        }
+        .box {
+          text-align: center;
+          min-height: 430px;
+        .icon-img{
+          margin: 0;
+          padding: 1rem;
+          img{
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            transition: transform 0.35s, -webkit-transform 0.35s;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            color: $grey-color;
+            @include sm {
+              width: 100%;
+            }
+            width: auto;
+            height: 72px;
+          }
+        }
+          h2 {
+            color: #e84545 ;
+          }
+          ul {
+            li{
+              margin-top: 0.28rem;
+              font-size: 1.2rem;
+            }
+          }
+          &:hover{
+            .icon-img{
+              img {
+                -webkit-transform: scale(1.2);
+                        transform: scale(1.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

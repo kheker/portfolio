@@ -9,7 +9,7 @@ const Home = () => (
     <Head>
       <title>Kevin Perez | Full-stack Developer</title>
       <meta name="description" content="full-Stack web developer" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/fingerprint.ico" />
     </Head>
 
     <div className="hero">
@@ -19,22 +19,27 @@ const Home = () => (
       </h4>
     </div>
     <section className="meet-section">
+      
       <div className="container">
         <div className="description">
           <h2>
             Hi, Nice to meet you.
           </h2>
           <p>
-            beginning my journey as a freelance developer nearly 3 years ago.
+            Beginning my journey as a freelance developer nearly 3 years ago.
             I've done remote work for startups and collaborations.
-            <span>I just love to sit and watch code compile.| I love what i do.</span>
+            <span>I just love to sit and watch code compile.| I love what I do.</span>
           </p>
         </div>
       </div>
     </section>
-    <hr />
     <section className="skills">
-      <h2>
+    <div className="stripes">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h2 className="section-title">
         My skills
       </h2>
       <div className="wrapper">
@@ -79,9 +84,19 @@ const Home = () => (
         </div>
       </div>
     </section>
-    <hr />
     <section className="portfolio">
       <h2>My portfolio</h2>
+      <div className="portfolio__container">
+        <figure className="portfolio__card">
+          <img src="/kopay-mx-crop.png" alt="kopay-portfolio" className="portfolio__img"/>
+          <figcaption className="portfolio__description">
+            <div className="portfolio__text">
+              <h2> Kopay Shop</h2>
+              <p>E-Commerce App</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </div>
 )

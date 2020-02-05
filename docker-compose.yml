@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  portfolio:
+    container_name: portfolio
+    ports:
+      - '3008:3008'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
